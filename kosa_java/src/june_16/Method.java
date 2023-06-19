@@ -1,4 +1,4 @@
-package june_16;
+package june_16;//6/19 오전
 
 public class Method {
 
@@ -11,9 +11,14 @@ public class Method {
 		//메소드 시그니처(method signature)란 메소드의 선언부에 명시되는 매개변수의 리스트
 		// 만약 두 메소드가 매개변수의 개수와 타입, 그 순서까지 모두 같다면, 이 두 메소드의 시그니처는 같다고 할 수 있다.
 	
-		Car myCar = new Car("Lamborgini", 2017);
+		//Car myCar = new Car("Lamborgini", 2017); //객체 생성
 		//myCar.color = "Red";//private 이기 떄문에 에러 발생
-		System.out.println(myCar.getModel());
+		Car myCar = new Car("아반떼", 2016, "흰색", 200);//생성자의 호출
+		myCar.accelerate(60, 3); // 메소드 호출
+		System.out.println(myCar.getModel());//생성자에 의해 초기화되었는지를 확인함
+	
+
+     
 	}
 
 }
@@ -24,17 +29,21 @@ class Car {//클래스명
 	
 	private String modelName;	//필드
 	private int modelYear;		//필드
-	private String color = "yellow";
+	private String color;
 	private int currentSpeed;
 	private int accelerationTIme;
+	private int maxSpeed;
 		
-	Car(String modelName, int modelYear) {
+	Car(String modelName, int modelYear, String color, int maxSpeed) {
 		this.modelName = modelName; //필드에 사용하는 것과 생성자 명이 같이 때문에 this. 으로 필드에 있는 것을 불러옴
 		this.modelYear = modelYear;
+		this.color = color;
+		this.maxSpeed = maxSpeed;
+		this.currentSpeed = 0;
 	}
 	
 	public String getModel() { //메소드
-		accelerate(100, 10);
+		//accelerate(100, 10);
 		return this.modelYear + "년식 " + this.modelName + " " + this.color;
 	}
 	
