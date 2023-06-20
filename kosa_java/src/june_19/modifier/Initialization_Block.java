@@ -1,4 +1,4 @@
-package june_19.method;
+package june_19.modifier;
 
 class Car2 {
 	private String modelName;
